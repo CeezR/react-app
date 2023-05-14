@@ -2,7 +2,13 @@ function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   items = [];
 
+  // Use variable when you don't need to specify parameters
   const message = items.length === 0 ? <p>No item found</p> : null;
+
+  // Use functions when you are in need of specifining parameters
+  const getMessage = () => {
+    return items.length === 0 ? <p>No item found</p> : null;
+  };
 
   // Empty angle brackets tells react to use a fragment to all its children!
   // React requires that all child items have a unique key, in this case
