@@ -1,4 +1,4 @@
-import Message fro
+import Message from './Message'
 
 function App() {
 
