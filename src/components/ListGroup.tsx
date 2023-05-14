@@ -2,6 +2,8 @@ function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   items = [];
 
+  const message = items.length === 0 ? <p>No item found</p> : null;
+
   // Empty angle brackets tells react to use a fragment to all its children!
   // React requires that all child items have a unique key, in this case
   // the strings are all unique however normaly you would have a dedicated
@@ -9,7 +11,7 @@ function ListGroup() {
   return (
     <>
       <h1>List Group</h1>
-      {items.length === 0 ? <p>No item found</p> : null}
+      {message}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item} className="list-group-item">
