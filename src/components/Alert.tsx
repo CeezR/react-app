@@ -1,5 +1,9 @@
+import { ReactNode } from "react";
+
 interface Props {
-  children: string;
+  // By specifing it as a ReactNode type we can pass more complex
+  // data structure such as html text!
+  children: ReactNode;
 }
 
 const Alert = ({ children }: Props) => {
