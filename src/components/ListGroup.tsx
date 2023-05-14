@@ -1,7 +1,11 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
   // items = [];
   // let selectedIndex = 0; // This variable is local to this function component, react is not aware of it!
   // To solve this people we need to tell React that his component is going to have data or state that
@@ -47,7 +51,7 @@ function ListGroup() {
   // id field for the item object you are creating.
   return (
     <>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No Item Found!</p>}
       <ul className="list-group">
         {items.map((item, index) => (
