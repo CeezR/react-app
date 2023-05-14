@@ -1,11 +1,9 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   //items = [];
-
-  // Event Handler!
-  const handleClick = (event: MouseEvent) => console.log(event);
+  let selectedIndex = 0;
 
   // Use variable when you don't need to specify parameters
   const message = items.length === 0 ? <p>No item found</p> : null;
@@ -25,7 +23,15 @@ function ListGroup() {
       {items.length === 0 && <p>No Item Found!</p>}
       <ul className="list-group">
         {items.map((item, index) => (
-          <li className="list-group-item" key={item} onClick={handleClick}>
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => (selectedIndex = index)}
+          >
             {item}
           </li>
         ))}
